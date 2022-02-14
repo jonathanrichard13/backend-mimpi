@@ -1,0 +1,31 @@
+{
+    "AddMetric": {
+        "targetId": "0",
+        "goalId" : "123",
+        "metricName" : "Test1",
+        "deadline" : "2021-08-10T18:37:20.000Z",
+        "comment" : "Hi",
+        "pic" : "Pic1",
+        "rate" : 3
+    },
+
+    "AddGoal": {
+        "targetId": "1",
+        "goalName": "aa",
+        "pic": "Harry",
+        "comment": "abc",
+        "rate": 3,
+        "deadline" : "2021-08-10T18:37:20.000Z",
+        "isFinished": true
+    },
+
+    "AddTarget": {
+        "username": "abc",
+        "target": "aaa",
+        "isFinished": true,
+        "deadline": "2021-08-10T18:37:20.000Z",
+        "comment": "abc"
+    }
+
+}
+
