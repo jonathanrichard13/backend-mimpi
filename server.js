@@ -10,7 +10,7 @@ const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-const uri = "mongodb://jonathanrichard13:hasagi123@cluster0-shard-00-00.bpe2q.mongodb.net:27017,cluster0-shard-00-01.bpe2q.mongodb.net:27017,cluster0-shard-00-02.bpe2q.mongodb.net:27017/MimpiDatabase?ssl=true&replicaSet=atlas-ttvvg0-shard-0&authSource=admin&retryWrites=true&w=majority";
+const uri = process.env.ATLAS_URI;
 mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true }
 );
 const connection = mongoose.connection;
@@ -25,6 +25,7 @@ const targetSettingRouter = require('./routes/targetSettings')
 const requestRouter = require('./routes/requests')
 const goalRouter = require('./routes/goal')
 const metricRouter = require('./routes/metric')
+const keywordRouter = require('./routes/keyword')
 
 app.use('/tasks', taskRouter);
 app.use('/users', usersRouter);
@@ -33,6 +34,7 @@ app.use('/target-setting', targetSettingRouter)
 app.use('/requests', requestRouter);
 app.use('/goal', goalRouter);
 app.use('/metric', metricRouter);
+app.use('/keyword', keywordRouter)
 
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
